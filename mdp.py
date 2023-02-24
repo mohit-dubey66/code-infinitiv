@@ -2,9 +2,6 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-
-# loading the saved models
-
 diabetes_model = pickle.load(open('./saved_models/diabetes_model.sav', 'rb'))
 heart_disease_model = pickle.load(open('./saved_models/heart_disease_model.sav', 'rb'))
 parkinsons_model = pickle.load(open('./saved_models/parkinsons_model.sav', 'rb'))
@@ -248,6 +245,8 @@ if (selected == 'Brain Stroke Prediction'):
                                       )
 
     stroke_diagnosis = ''
+
+    # TODO: Implement prediction
 
     # if st.button('Diabetes Test Result'):
     #     diab_prediction = diabetes_model.predict(
