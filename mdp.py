@@ -15,9 +15,8 @@ with st.sidebar:
     selected = option_menu('Multiple Disease Prediction System',
 
                            ['Diabetes Prediction',
-                            'Heart Disease Prediction',
-                            'Parkinsons Prediction', 'Brain Stroke Prediction'],
-                           icons=['activity', 'heart', 'person', 'activity'],
+                            'Parkinsons Prediction', 'Brain Stroke Prediction', 'About Us'],
+                           icons=['activity', 'person', 'activity', 'person'],
                            default_index=0)
 
 
@@ -62,64 +61,6 @@ if (selected == 'Diabetes Prediction'):
             diab_diagnosis = 'The person is not diabetic'
 
     st.success(diab_diagnosis)
-
-
-# Heart Disease Prediction Page
-if (selected == 'Heart Disease Prediction'):
-    st.title('Heart Disease Prediction using ML')
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        age = int(st.text_input('Age'))
-
-    with col2:
-        sex = int(st.text_input('Sex'))
-
-    with col3:
-        cp = int(st.text_input('Chest Pain types'))
-
-    with col1:
-        trestbps = int(st.text_input('Resting Blood Pressure'))
-
-    with col2:
-        chol = int(st.text_input('Serum Cholestoral in mg/dl'))
-
-    with col3:
-        fbs = int(st.text_input('Fasting Blood Sugar > 120 mg/dl'))
-
-    with col1:
-        restecg = int(st.text_input('Resting Electrocardiographic results'))
-
-    with col2:
-        thalach = int(st.text_input('Maximum Heart Rate achieved'))
-
-    with col3:
-        exang = int(st.text_input('Exercise Induced Angina'))
-
-    with col1:
-        oldpeak = float(st.text_input('ST depression induced by exercise'))
-
-    with col2:
-        slope = int(st.text_input('Slope of the peak exercise ST segment'))
-
-    with col3:
-        ca = int(st.text_input('Major vessels colored by flourosopy'))
-
-    with col1:
-        thal = int(st.text_input('thal: 0 = normal; 1 = fixed defect; 2 = reversable defect'))
-
-    heart_diagnosis = ''
-
-    if st.button('Heart Disease Test Result'):
-        heart_prediction = heart_disease_model.predict(
-            [[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
-
-        if (heart_prediction[0] == 1):
-            heart_diagnosis = 'The person is having heart disease'
-        else:
-            heart_diagnosis = 'The person does not have any heart disease'
-
-    st.success(heart_diagnosis)
 
 
 # Parkinson's Prediction Page
@@ -258,3 +199,22 @@ if (selected == 'Brain Stroke Prediction'):
     #         diab_diagnosis = 'The person is not diabetic'
 
     st.success(stroke_diagnosis)
+
+if (selected == 'About Us'):
+    st.title('About CodeINFINITIV')
+
+    st.markdown('#### Members: ')
+    st.markdown('- Team Leader: Rameshwar')
+    st.markdown('- Mohit Dubey')
+    st.markdown('- Aditya Singh')
+    st.markdown('- Vinayak Shukla')
+    st.markdown('- Utkarsh Dwivedi')
+    st.markdown('------')
+
+    st.markdown('#### Technologies Used: ')
+    st.markdown('- Core language used: Python')
+    st.markdown('- Streamlit for UI')
+    st.markdown('- Scikit-learn for Machine Learning')
+    st.markdown('- Kaggle for getting all the required data')
+    st.markdown('- AWS for hosting')
+    st.markdown('- Git for Version Control')
