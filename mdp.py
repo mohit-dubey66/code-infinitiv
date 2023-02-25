@@ -257,4 +257,4 @@ if (selected == 'Brain Stroke Prediction'):
     #     else:
     #         diab_diagnosis = 'The person is not diabetic'
 
-    st.success(diab_diagnosis)
+    st.success(stroke_diagnosis)
